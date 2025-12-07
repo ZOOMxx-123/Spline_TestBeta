@@ -1,0 +1,63 @@
+/* Reset */
+* {margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Segoe UI', Roboto,sans-serif;background:#0d0d0d;color:#fff;scroll-behavior:smooth;}
+a{text-decoration:none;color:inherit;}
+
+/* Header */
+header{
+  display:flex;justify-content:space-between;align-items:center;padding:1rem 5rem;
+  position:fixed;width:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(10px);z-index:100;transition:0.3s;
+}
+header:hover{background:rgba(0,0,0,0.9);}
+header .logo{font-size:2rem;font-weight:bold;}
+header nav{display:flex;gap:2rem;}
+header nav a{transition:0.3s;}
+header nav a:hover{color:#a7a7a7;}
+.btn-signing{padding:0.7rem 2rem;border-radius:50px;border:none;background:#a7a7a7;color:black;cursor:pointer;transition:all 0.3s;}
+.btn-signing:hover{background:white;transform:scale(1.05);box-shadow:0 4px 20px rgba(255,255,255,0.3);}
+
+/* Sections */
+.section{width:100%;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:100px 5%;}
+.home-section{position:relative;text-align:center;overflow:hidden;}
+.bg-image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:0.2;z-index:-1;}
+.home-content{position:absolute;top:30%;left:50%;transform:translateX(-50%);}
+.animated-text{opacity:0;animation:fadeIn 1s forwards;}
+.delay-1{animation-delay:0.5s;}
+@keyframes fadeIn{to{opacity:1;}}
+
+/* About Section */
+.about-section{text-align:center;max-width:700px;line-height:1.6;}
+
+/* Portfolio Section */
+.portfolio-section .projects{display:flex;gap:2rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;}
+.project-card{background:#1a1a1a;padding:2rem;border-radius:10px;width:250px;transition:transform 0.3s,box-shadow 0.3s;text-align:center;}
+.project-card:hover{transform:translateY(-10px);box-shadow:0 10px 30px rgba(255,255,255,0.2);}
+
+/* Contact Form */
+.contact-form{display:flex;flex-direction:column;gap:1rem;width:300px;}
+.contact-form input,.contact-form textarea{padding:0.8rem;border-radius:10px;border:none;background:#1a1a1a;color:#fff;}
+.contact-form button{padding:0.8rem;border-radius:50px;border:none;background:#a7a7a7;color:black;cursor:pointer;transition:all 0.3s;}
+.contact-form button:hover{background:white;transform:scale(1.05);}
+
+/* Responsive */
+@media(max-width:768px){
+  header{flex-direction:column;padding:1rem 2rem;gap:1rem;}
+  .home-content{top:20%;left:50%;transform:translateX(-50%);}
+  .portfolio-section .projects{flex-direction:column;align-items:center;}
+}
+/* Cacher le bouton "Built with Spline" */
+spline-viewer {
+  position: relative;
+}
+
+spline-viewer::after {
+  content: '';
+  position: absolute;
+  bottom: 10px; /* ajuster selon besoin */
+  right: 10px;  /* ajuster selon besoin */
+  width: 120px; /* largeur approximative du bouton */
+  height: 30px; /* hauteur approximative du bouton */
+  background: #0d0d0d; /* même couleur que le background */
+  pointer-events: none; /* laisse l'animation 3D interactive */
+  border-radius: 5px; /* optionnel, pour arrondir le recouvrement */
+}
